@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { Hero } from "@/app/[locale]/hero/hero";
 
-export default function RootPage() {
-  redirect(routing.defaultLocale);
+export default function Page() {
+  return <Hero />;
 }

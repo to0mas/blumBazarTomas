@@ -33,7 +33,7 @@ export function Header() {
     <header className={classes.header}>
       <Container size="md" className={classes.inner}>
         <Group justify="space-between" w="100%">
-          <Image src="/blogic-logo.png" alt="Blogic Bazar" width={115} height={46} />
+          <Image src="/blogic-logo.png" alt="Blogic Bazar" width={100} height={50} />
           <Group gap={5} visibleFrom="xs">
             {items}
           </Group>

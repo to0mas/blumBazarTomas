@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
 import { Button, Group, Stack, Title } from "@mantine/core";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import classes from "./hero.module.css";
 
 export function Hero() {
@@ -15,14 +15,13 @@ export function Hero() {
     >
       <Stack className={classes.hero} gap="xl">
         <Title className={classes.interniblogic}>
-         🔖 Interní Blogic Bazar
+          🔖 Interní Blogic Bazar
         </Title>
 
         <div>
           <Title className={classes.herotitle}>
             NABÍDNI. NAJDI.
           </Title>
-
           <Title className={classes.herotitleorange}>
             PROPOJUJ.
           </Title>
@@ -37,9 +36,9 @@ export function Hero() {
         <Group>
           <Button
             component={Link}
-            href="/cs/inzeraty"
+            href="/inzeraty"
             color="#FF6A00"
-            size="lg"
+            size="md"
             radius="xl"
 
           >
@@ -47,22 +46,23 @@ export function Hero() {
           </Button>
 
           <Button
-          className={classes.buttonplus}
+            className={classes.buttonplus}
             component={Link}
-            href="/cs/inzeraty/novy"
-            size="lg"
+            href="/addinzeraty"
+            size="md"
+
             variant="outline"
             color="#FF6A00"
             radius="xl"
           >
             Přidat inzerát
-
             <FaPlus />
           </Button>
         </Group>
       </Stack>
 
       <Image
+        className={classes.heroimg}
         src="/heroimg.png"
         alt="bazar"
         width={550}
