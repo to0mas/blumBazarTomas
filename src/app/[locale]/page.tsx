@@ -1,6 +1,9 @@
 import { Title } from "@mantine/core";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { Header } from "@/components/header";
+import { Hero } from "@/app/[locale]/hero/hero";
+import { FaPlus } from "react-icons/fa6";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations();
@@ -14,5 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page(_: PageProps<"/[locale]">) {
   const t = await getTranslations();
 
-  return <Title>{t("page.home.title")}</Title>;
+   return (
+    <>
+
+
+
+
+        <Hero/>
+    </>
+   )
 }

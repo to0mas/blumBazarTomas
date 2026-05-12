@@ -1,0 +1,43 @@
+.hero{
+height : 100vh;
+width: auto;
+padding: 20px 10%;
+display: flex
+;
+justify-content: center;
+
+
+}
+.interniblogic{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 18px;
+    border-radius: 999px;
+
+    background: rgba(255, 106, 0, 0.1);
+    color: #FF6A00;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    width: fit-content;
+}
+
+.herotitle{
+font-size: 70px;
+}
+.herotitleorange{
+font-size: 70px;
+ color: #FF6A00;
+}
+.heropar{
+font-size: 20px;
+font-weight: 400;
+color: rgba(0, 0, 0, 0.553)
+;
+}
+
+
+
