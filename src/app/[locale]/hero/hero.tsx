@@ -4,25 +4,41 @@ import { FaPlus } from "react-icons/fa";
 import { Button, Group, Stack, Title } from "@mantine/core";
 import { Link } from "@/i18n/navigation";
 import classes from "./hero.module.css";
+import { gsap } from "gsap";
+import { useRef } from "react";
+import { useEffect } from "react";
+import { FaStore } from "react-icons/fa";
+
+
 
 export function Hero() {
+
+const heroRef = useRef(null);
+  useEffect(() => {
+  gsap.from(heroRef.current, {
+    opacity: 0,
+    x: -50,
+    duration: 1,
+  });
+}, []);
   return (
     <Group
+    ref={heroRef}
       justify="space-between"
       align="center"
       wrap="nowrap"
       className={classes.herowrapper}
     >
-      <Stack className={classes.hero} gap="xl">
-        <Title className={classes.interniblogic}>
-          🔖 Interní Blogic Bazar
-        </Title>
+      <Stack   className={classes.hero} gap="xl">
+        <Title style={{ gap: "8px" }} className={classes.interniblogic}>
+  <FaStore /> Interní Blogic Bazar
+</Title>
 
         <div>
-          <Title className={classes.herotitle}>
+          <Title  className={classes.herotitle}>
             NABÍDNI. NAJDI.
           </Title>
-          <Title className={classes.herotitleorange}>
+          <Title  className={classes.herotitleorange}>
             PROPOJUJ.
           </Title>
         </div>
@@ -35,6 +51,7 @@ export function Hero() {
 
         <Group>
           <Button
+          className={classes.button}
             component={Link}
             href="/inzeraty"
             color="#FF6A00"
@@ -46,7 +63,7 @@ export function Hero() {
           </Button>
 
           <Button
-            className={classes.buttonplus}
+            className={classes.button}
             component={Link}
             href="/addinzeraty"
             size="md"

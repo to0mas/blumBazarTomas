@@ -1,31 +1,29 @@
 .herowrapper{
-padding: 15px 10%;
-  width: 100%;
+padding: 50px 10%;
+margin: 18px ;
+  width: auto;
   display: flex;
   justify-content: center;
   flex-direction: row;
   align-items: center;
-}
-
-.herowrapper {
   background: rgb(255, 255, 255);
-
   border-radius: 15px;
-   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
+
+
 .hero{
 gap: 10px;
 }
-.interniblogic{
-background: #ff6a007e;
-font-weight: 400;
-font-size: .9rem;
-color: #000000a3;
-padding: 10px;
-border-radius: 10px;
- display: inline-flex;
+.interniblogic {
+  background: linear-gradient(135deg, #FF6A00, #ff9a44);
+  font-weight: 400;
+  font-size: .9rem;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-flex;
   width: fit-content;
-
 }
 .herotitle{
   font-size: 3rem;
@@ -33,6 +31,9 @@ border-radius: 10px;
 .herotitleorange{
   font-size:3rem;
   color: #ff6a00;
+}
+.button{
+  gap: 8px;
 }
 .heropar{
   font-size:1rem;
@@ -44,13 +45,13 @@ border-radius: 10px;
 .herowrapper{
   flex-direction: column;
   display: flex;
-  justify-content:center;
+padding: 40px 10%;
+margin: 10px;
   align-items: center;
+  width: auto;
 
 }
-.interniblogic{
-  text-align: center;
-}
+
 .heroimg{
 display: none;
 }
