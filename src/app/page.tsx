@@ -1,5 +1,5 @@
-import { Hero } from "@/app/[locale]/hero/hero";
+import { redirect } from "next/navigation";
 
 export default function Page() {
-  return <Hero />;
+  redirect("/cs");
 }
