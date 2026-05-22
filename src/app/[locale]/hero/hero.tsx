@@ -1,47 +1,31 @@
 "use client";
-import Image from "next/image";
-import { FaPlus } from "react-icons/fa";
 import { Button, Group, Stack, Title } from "@mantine/core";
+import { gsap } from "gsap";
+import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { FaPlus, FaStore } from "react-icons/fa";
 import { Link } from "@/i18n/navigation";
 import classes from "./hero.module.css";
-import { gsap } from "gsap";
-import { useRef } from "react";
-import { useEffect } from "react";
-import { FaStore } from "react-icons/fa";
-
-
 
 export function Hero() {
-
-const heroRef = useRef(null);
+  const heroRef = useRef(null);
   useEffect(() => {
-  gsap.from(heroRef.current, {
-    opacity: 0,
-    x: -50,
-    duration: 1,
-  });
-
-}, []);
+    gsap.from(heroRef.current, {
+      opacity: 0,
+      x: -50,
+      duration: 1,
+    });
+  }, []);
   return (
-    <Group
-    ref={heroRef}
-      justify="space-between"
-      align="center"
-      wrap="nowrap"
-      className={classes.herowrapper}
-    >
-      <Stack   className={classes.hero} gap="xl">
+    <Group ref={heroRef} justify="space-between" align="center" wrap="nowrap" className={classes.herowrapper}>
+      <Stack className={classes.hero} gap="xl">
         <Title style={{ gap: "8px" }} className={classes.interniblogic}>
-  <FaStore /> Interní Blogic Bazar
-</Title>
+          <FaStore /> Interní Blogic Bazar
+        </Title>
 
         <div>
-          <Title  className={classes.herotitle}>
-            NABÍDNI. NAJDI.
-          </Title>
-          <Title  className={classes.herotitleorange}>
-            PROPOJUJ.
-          </Title>
+          <Title className={classes.herotitle}>NABÍDNI. NAJDI.</Title>
+          <Title className={classes.herotitleorange}>PROPOJUJ.</Title>
         </div>
 
         <Title className={classes.heropar}>
@@ -51,15 +35,7 @@ const heroRef = useRef(null);
         </Title>
 
         <Group>
-          <Button
-          className={classes.button}
-            component={Link}
-            href="/inzeraty"
-            color="#FF6A00"
-            size="md"
-            radius="xl"
-
-          >
+          <Button className={classes.button} component={Link} href="/inzeraty" color="#FF6A00" size="md" radius="xl">
             Zobrazit inzeráty
           </Button>
 
@@ -68,7 +44,6 @@ const heroRef = useRef(null);
             component={Link}
             href="/addinzeraty"
             size="md"
-
             variant="outline"
             color="#FF6A00"
             radius="xl"
@@ -79,13 +54,7 @@ const heroRef = useRef(null);
         </Group>
       </Stack>
 
-      <Image
-        className={classes.heroimg}
-        src="/heroimg.png"
-        alt="bazar"
-        width={550}
-        height={550}
-      />
+      <Image className={classes.heroimg} src="/heroimg.png" alt="bazar" width={550} height={550} />
     </Group>
   );
 }

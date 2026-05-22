@@ -3,7 +3,7 @@
 import { Button, Group, Select, Stack, Text } from "@mantine/core";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { upravitDostupnost, smazatInzerat } from "@/app/[locale]/addinzeraty/action";
+import { smazatInzerat, upravitDostupnost } from "@/app/[locale]/addinzeraty/action";
 
 const MOZNOSTI = [
   { value: "dostupne", label: "Dostupné" },
@@ -18,7 +18,9 @@ export function DostupnostPanel({ id, aktualniDostupnost }: { id: number; aktual
 
   return (
     <Stack gap="sm">
-      <Text fw={600} size="sm">Správa inzerátu</Text>
+      <Text fw={600} size="sm">
+        Správa inzerátu
+      </Text>
 
       <Group align="flex-end" gap="sm">
         <Select
@@ -36,7 +38,7 @@ export function DostupnostPanel({ id, aktualniDostupnost }: { id: number; aktual
           loading={loading}
           onClick={async () => {
             setLoading(true);
-            await upravitDostupnost(id, dostupnost as "dostupne"  | "rezervovano" | "prodano");
+            await upravitDostupnost(id, dostupnost as "dostupne" | "rezervovano" | "prodano");
             setLoading(false);
             router.refresh();
           }}

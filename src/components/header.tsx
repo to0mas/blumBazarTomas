@@ -2,13 +2,12 @@
 
 import { Burger, Container, Divider, Drawer, Group, ScrollArea, Stack, Text } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { gsap } from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useRef } from "react";
 import classes from "./header.module.css";
-import { useRef } from "react";
-import { gsap } from "gsap";
-import { useEffect } from "react";
 
 const links = [
   { link: "/cs/", label: "Domů", home: true },
@@ -20,18 +19,17 @@ export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const pathname = usePathname();
 
-const headerRef = useRef(null);
+  const headerRef = useRef(null);
   useEffect(() => {
-  gsap.from(headerRef.current, {
-    opacity: 0,
-    x: 50,
-    duration: 1,
-  });
-}, []);
+    gsap.from(headerRef.current, {
+      opacity: 0,
+      x: 50,
+      duration: 1,
+    });
+  }, []);
 
   const items = links.map((link) => (
     <Link
-
       key={link.label}
       href={link.link}
       className={link.home ? classes.linkHome : classes.link}
@@ -51,10 +49,8 @@ const headerRef = useRef(null);
             {items}
           </Group>
           <Burger
-
             color="#FF6A00"
             opened={opened}
-
             onClick={toggle}
             hiddenFrom="md"
             size="md"
@@ -63,28 +59,12 @@ const headerRef = useRef(null);
         </Group>
       </Container>
 
-      <Drawer
-
-        opened={opened}
-        onClose={close}
-        size="100%"
-        padding="md"
-        radius="5px"
-
-
-        hiddenFrom="md"
-        zIndex={1000000}
-      >
-        <ScrollArea h="calc(100vh - 80px)"  p="md" m="lg" mx="-md">
-          <Divider
-
-          my="md"
-
-          />
-<Stack align="center" gap="md">
-  {items}
-</Stack>
-
+      <Drawer opened={opened} onClose={close} size="100%" padding="md" radius="5px" hiddenFrom="md" zIndex={1000000}>
+        <ScrollArea h="calc(100vh - 80px)" p="md" m="lg" mx="-md">
+          <Divider my="md" />
+          <Stack align="center" gap="md">
+            {items}
+          </Stack>
         </ScrollArea>
       </Drawer>
     </header>
