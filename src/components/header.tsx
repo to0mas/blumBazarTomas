@@ -59,7 +59,7 @@ const headerRef = useRef(null);
             hiddenFrom="md"
             size="md"
             aria-label="Otevřít menu"
-          />;
+          />
         </Group>
       </Container>
 

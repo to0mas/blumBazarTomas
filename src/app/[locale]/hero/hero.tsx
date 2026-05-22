@@ -20,6 +20,7 @@ const heroRef = useRef(null);
     x: -50,
     duration: 1,
   });
+
 }, []);
   return (
     <Group
